@@ -9,9 +9,15 @@ var leapYear = function(year) {
 $(document).ready(function(){
   $("form#formOne").submit(function(event) {
     event.preventDefault();
-    debugger;
     var year = parseInt($("input#year").val());
     var result = leapYear(year);
-    $("#result").text(result);
+    $(".year").text(year);
+    if (!result){
+      $(".not").text("not");
+    } else  {
+      $(".not").text("");
+    }
+
+    $("#result").show();
   });
 });
